@@ -98,51 +98,27 @@ window.onload = backgroundChange;
 
 
 
-// let time = document.getElementById("time");
-
-// let date = new Date();
-
-// console.log(date.getHours());
-// console.log(date.getMinutes());
-// time.textContent = `${date.getHours()}:${date.getMinutes()}`;
-
-
-
-
-
-
 
 
 let time = document.getElementById("time");
-
-// Declare a built object from JS
-let date = new Date();
-let hours = date.getHours();
-let minutes = date.getMinutes();
-
-
-// Add a leading zero if minutes < 10
-minutes = minutes < 10 ? "0" + minutes : minutes;
-
-time.textContent = `${hours}:${minutes}`;
-
-
 
 function updateClock() {
     let date = new Date();
     let hours = date.getHours();
     let minutes = date.getMinutes();
 
+    // shows 0 in displayed time
     minutes = minutes < 10 ? "0" + minutes : minutes;
 
-    document.getElementById("time").textContent = `${hours}:${minutes}`;
+    time.textContent = `${hours}:${minutes}`;
 }
+
+// Call once to set the initial time
+updateClock();
 
 // Update the clock every second
 setInterval(updateClock, 1000);
 
-// Call once to set the initial time
-updateClock();
 
 
 
