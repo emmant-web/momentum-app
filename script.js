@@ -151,10 +151,10 @@ updateClock();
 
 // quote content
 const quotes = [
-    "Time is gold",
-    "Time is money",
-    "Time is everything",
-    "Time is short"
+    "Believe you can and you're halfway there.",
+    "Your time is limited, so don’t waste it living someone else’s life.",
+    "Compare yourself to who you were yesterday, not to who someone else is today.",
+    "If you fulfill your obligations everyday you don't need to worry about the future."
 ];
 
 
