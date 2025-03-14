@@ -116,11 +116,6 @@ function updateClock() {
 // Call once to set the initial time
 updateClock();
 
-// Update the clock every second
-setInterval(updateClock, 1000);
-
-
-
 
 
 
