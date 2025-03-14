@@ -116,6 +116,9 @@ function updateClock() {
 // Call once to set the initial time
 updateClock();
 
+// update the time display every minute
+setInterval(updateClock, 1000);
+
 
 
 
