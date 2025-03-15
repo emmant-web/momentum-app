@@ -1,40 +1,40 @@
 
 
-// for adding tasks
 function addTask() {
     const taskInput = document.getElementById("taskInput");
     const taskList = document.getElementById("taskList");
-    const taskText = taskInput.value;
+    const taskText = taskInput.value.trim(); // Trim to remove extra spaces
 
-    // creating elements
+    // Prevent adding empty tasks
+    if (taskText === "") {
+        alert("Please enter a task.");
+        return;
+    }
+
+    // Creating elements
     const listItem = document.createElement("div");
     const label = document.createElement("label");
     const checkBox = document.createElement("input");
 
-
     listItem.classList.add("task-item"); // Style the background
     label.classList.add("task-label"); // Style the text
-    // adding functionality
+
+    // Adding functionality
     label.textContent = taskText;
     checkBox.type = "checkbox";
- 
-   
+
     checkBox.onclick = function() {
         label.classList.toggle("completed");
-    }
+    };
 
-
-    // appending the elements
+    // Appending the elements
     listItem.appendChild(checkBox);
     listItem.appendChild(label);
     taskList.appendChild(listItem);
-    taskInput.value = "";
+    taskInput.value = ""; // Clear input field after adding task
 }
 
 document.getElementById("addButton").addEventListener("click", addTask);
-
-
-
 
 
 
@@ -60,7 +60,6 @@ function editName() {
     } else {
         header.textContent =  `Good Evening, ${name.value}`
     }
-
 
 }
 
@@ -165,4 +164,54 @@ document.getElementById("addQuote").addEventListener("click", function() {
         alert("Please enter a valid quote.");
     }
     // If user clicked cancel, do nothing
+});
+
+
+
+
+
+
+
+// Main Focus Functionality
+document.getElementById("setFocusButton").addEventListener("click", function() {
+    let focusInput = document.getElementById("focusInput");
+    let focusDisplay = document.getElementById("focusDisplay");
+    let clearFocusButton = document.getElementById("clearFocusButton");
+
+    // Check if the input is not empty
+    if (focusInput.value.trim() !== "") {
+        // Set the focus text
+        focusDisplay.textContent = `Focus: ${focusInput.value}`;
+        
+        // Show the focus display and clear button
+        focusDisplay.classList.remove("hidden");
+        clearFocusButton.classList.remove("hidden");
+
+        // Hide the input and set button
+        focusInput.classList.add("hidden");
+        this.classList.add("hidden");
+    } else {
+        alert("Please enter a valid focus.");
+    }
+});
+
+
+
+// Clear Focus Functionality
+document.getElementById("clearFocusButton").addEventListener("click", function() {
+    let focusInput = document.getElementById("focusInput");
+    let focusDisplay = document.getElementById("focusDisplay");
+    let setFocusButton = document.getElementById("setFocusButton");
+
+    // Clear the focus text
+    focusDisplay.textContent = "";
+
+    // Show the input and set button again
+    focusInput.value = "";
+    focusInput.classList.remove("hidden");
+    setFocusButton.classList.remove("hidden");
+
+    // Hide the focus display and clear button
+    focusDisplay.classList.add("hidden");
+    this.classList.add("hidden");
 });

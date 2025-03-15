@@ -10,11 +10,12 @@
 
   <div class="background-tint"></div>
 
+
+
+
 <div class="container-storage">
 
   <div class="container-one">
-
- 
    
  
      <!-- Current time story -->
@@ -26,11 +27,12 @@
     <!-- Greetings and name story -->
     <div class="header-div">
  
-     <h1 class="header">Greetings, ______</h1>
+     <h1 class="header">Greetings, guest!</h1>
      <input type="text" id="name" placeholder="Enter name here">
      <button id="editButton">Edit</button>
    
     </div>
+
  
   </div>
  
@@ -42,13 +44,27 @@
      <button id="addQuote">Add Quote</button>
  
    </div>
- 
 
   </div>
 
 
   <div class="container-three">
-       <!-- Adding task story -->
+
+   <!-- Main Focus Section -->
+   <div class="focus-div">
+    <h2>Today's Focus:</h2>
+    <input type="text" id="focusInput" placeholder="Enter your main focus">
+    <p id="focusDisplay" class="hidden"></p>
+    <button id="setFocusButton">Set Focus</button>
+    <button id="clearFocusButton" class="hidden">Clear</button>
+  </div>
+  
+  </div>
+
+
+
+  <div class="container-four">
+      
    <div class="task-div">
  
     <input type="text" id="taskInput" placeholder="Add new task">
@@ -57,6 +73,8 @@
     <div id="taskList"></div>
 
   </div>
+
+
   </div>
   
 </div>
